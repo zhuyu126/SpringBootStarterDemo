@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="com.example.dao.UserMapper">
+    <select id="findAll" resultType="com.example.pojo.User">
+        select * from user;
+    </select>
+
+    <insert id="save" parameterType="com.example.pojo.User">
+        insert into user (id, name, age, address) values (#{id}, #{name}, #{age}, #{address});
+    </insert>
+
+    <update id="update" parameterType="com.example.pojo.User">
+        update user set name = #{name}, age = #{age}, address = #{address} where id = #{id};
+    </update>
+
+    <delete id="deleteById">
+        delete from user where id = #{id};
+    </delete>
+
+</mapper>
